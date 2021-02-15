@@ -1,9 +1,11 @@
 package com.nasapictures.app
 
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.ViewCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.nasapictures.app.databinding.FragmentNasaMetaDetailsBinding
