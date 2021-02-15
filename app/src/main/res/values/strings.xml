@@ -2,4 +2,7 @@
     <string name="app_name">NASA Pictures</string>
     <string name="nasa">NASA</string>
     <string name="image">image</string>
+    <string name="title">Title</string>
+    <string name="details">Details</string>
+    <string name="date">Date</string>
 </resources>

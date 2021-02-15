@@ -8,12 +8,15 @@ import androidx.annotation.NonNull
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import com.nasapictures.app.adapters.NasaItemAdapter
 import com.nasapictures.app.databinding.FragmentNasaBinding
 import com.nasapictures.app.viewmodels.NasaViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class NasaFragment : Fragment() {
@@ -39,10 +42,15 @@ class NasaFragment : Fragment() {
         return binding.root
     }
 
-    private fun fetchNasaItems(adapter: NasaItemAdapter, binding: FragmentNasaBinding) {
-        viewModel.fetchNasaItems().asLiveData().observe(viewLifecycleOwner) { result ->
-            binding.hasItems = !result.isNullOrEmpty()
-            adapter.submitList(result)
+        private fun fetchNasaItems(adapter: NasaItemAdapter, binding: FragmentNasaBinding) {
+        lifecycleScope.launch {
+            viewModel.fetchNasaItems().collect {
+                run {
+                    binding.hasItems = !it.isNullOrEmpty()
+                    adapter.submitList(it)
+                }
+            }
         }
+
     }
 }

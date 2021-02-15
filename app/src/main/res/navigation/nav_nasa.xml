@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_nasa.xml"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_nasa.xml"
     app:startDestination="@id/nasaFragment">
 
     <fragment
         android:id="@+id/nasaFragment"
         android:name="com.nasapictures.app.NasaFragment"
-        android:label="NasaFragment" />
+        tools:layout="@layout/fragment_nasa"
+        android:label="NasaFragment" >
+        <action
+            android:id="@+id/action_nasaFragment_to_nasaDetailsFragment"
+            app:destination="@id/nasaDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nasaDetailsFragment"
+        android:name="com.nasapictures.app.NasaViewPagerFragment"
+        tools:layout="@layout/fragment_nasa_details"
+        android:label="NasaDetailsFragment" />
+
+    <fragment
+        android:id="@+id/nasaMetaDetailsFragment"
+        android:name="com.nasapictures.app.NasaViewPagerFragment"
+        tools:layout="@layout/fragment_nasa_meta_details"
+        android:label="NasaMetaDetailsFragment">
+        <action
+            android:id="@+id/action_nasaMetaDetailsFragment_to_nasaBottomMetaDetailsFragment"
+            app:destination="@id/nasaBottomMetaDetailsFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/nasaBottomMetaDetailsFragment"
+        android:name="com.nasapictures.app.NasaBottomMetaDetailsFragment"
+        tools:layout="@layout/fragment_bottom_nasa_meta_details"
+        android:label="NasaBottomMetaDetailsFragment" />
+
+
 </navigation>

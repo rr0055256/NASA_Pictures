@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="nasaItem"
+            type="com.nasapictures.app.data.NasaItem"/>
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivNasaDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:imageFromUrl="@{nasaItem.hdurl}"
+        android:contentDescription="@string/image" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvCopyRight"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:text="@{nasaItem.copyright}"
+            android:fontFamily="sans-serif-medium"
+            tools:text="@tools:sample/lorem/random"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

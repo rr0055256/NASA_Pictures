@@ -29,7 +29,7 @@ class NasaItemAdapter : ListAdapter<NasaItem,RecyclerView.ViewHolder>(NasaDiffCa
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
             binding.setClickListener {
-                binding.nasaItem?.let { nasaItem ->
+                binding.nasaItem?.let {
 
                 }
             }
@@ -44,8 +44,6 @@ class NasaItemAdapter : ListAdapter<NasaItem,RecyclerView.ViewHolder>(NasaDiffCa
     }
 }
 
-
-
 private class NasaDiffCallBack : DiffUtil.ItemCallback<NasaItem>(){
     override fun areItemsTheSame(oldItem: NasaItem, newItem: NasaItem): Boolean {
         return oldItem.title == newItem.title
@@ -54,5 +52,4 @@ private class NasaDiffCallBack : DiffUtil.ItemCallback<NasaItem>(){
     override fun areContentsTheSame(oldItem: NasaItem, newItem: NasaItem): Boolean {
         return oldItem == newItem
     }
-
 }

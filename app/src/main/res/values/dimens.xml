@@ -2,4 +2,6 @@
 <resources>
     <dimen name="margin_4">4dp</dimen>
     <dimen name="nasa_details_height">278dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
 </resources>
