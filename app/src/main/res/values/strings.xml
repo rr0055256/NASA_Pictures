@@ -5,4 +5,6 @@
     <string name="title">Title</string>
     <string name="details">Details</string>
     <string name="date">Date</string>
+    <string name="menu_information">information</string>
+    <string name="copy_right">Copyright</string>
 </resources>

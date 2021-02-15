@@ -8,8 +8,13 @@
     <fragment
         android:id="@+id/nasaFragment"
         android:name="com.nasapictures.app.NasaFragment"
+        android:label="NasaFragment"
         tools:layout="@layout/fragment_nasa"
-        android:label="NasaFragment" >
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        >
         <action
             android:id="@+id/action_nasaFragment_to_nasaDetailsFragment"
             app:destination="@id/nasaDetailsFragment" />
@@ -18,23 +23,49 @@
     <fragment
         android:id="@+id/nasaDetailsFragment"
         android:name="com.nasapictures.app.NasaViewPagerFragment"
+        android:label="NasaDetailsFragment"
         tools:layout="@layout/fragment_nasa_details"
-        android:label="NasaDetailsFragment" />
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        >
+        <action
+            android:id="@+id/action_nasaDetailsFragment_to_nasaMetaDetailsFragment"
+            app:destination="@id/nasaMetaDetailsFragment" />
 
-    <fragment
-        android:id="@+id/nasaMetaDetailsFragment"
-        android:name="com.nasapictures.app.NasaViewPagerFragment"
-        tools:layout="@layout/fragment_nasa_meta_details"
-        android:label="NasaMetaDetailsFragment">
         <action
             android:id="@+id/action_nasaMetaDetailsFragment_to_nasaBottomMetaDetailsFragment"
             app:destination="@id/nasaBottomMetaDetailsFragment" />
+
+        <argument
+            android:name="index"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nasaMetaDetailsFragment"
+        android:name="com.nasapictures.app.NasaDetailsFragment"
+        android:label="NasaMetaDetailsFragment"
+        tools:layout="@layout/fragment_nasa_meta_details"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"
+        >
+
+
     </fragment>
     <dialog
         android:id="@+id/nasaBottomMetaDetailsFragment"
         android:name="com.nasapictures.app.NasaBottomMetaDetailsFragment"
-        tools:layout="@layout/fragment_bottom_nasa_meta_details"
-        android:label="NasaBottomMetaDetailsFragment" />
+        android:label="NasaBottomMetaDetailsFragment"
+        tools:layout="@layout/fragment_bottom_nasa_meta_details">
+
+        <argument
+            android:name="index"
+            app:argType="string" />
+    </dialog>
 
 
 </navigation>

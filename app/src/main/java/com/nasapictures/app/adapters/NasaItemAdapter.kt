@@ -1,10 +1,14 @@
 package com.nasapictures.app.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.nasapictures.app.NasaFragmentDirections
+import com.nasapictures.app.NasaViewPagerFragmentDirections
 import com.nasapictures.app.data.NasaItem
 import com.nasapictures.app.databinding.ItemLayoutBinding
 
@@ -28,11 +32,15 @@ class NasaItemAdapter : ListAdapter<NasaItem,RecyclerView.ViewHolder>(NasaDiffCa
         private val binding: ItemLayoutBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         init {
-            binding.setClickListener {
+            binding.setClickListener(fun(view: View) {
                 binding.nasaItem?.let {
-
+                    val directions =
+                        NasaFragmentDirections.actionNasaFragmentToNasaDetailsFragment(
+                            adapterPosition.toString()
+                        )
+                    view.findNavController().navigate(directions)
                 }
-            }
+            })
         }
 
         fun bind(item: NasaItem) {
