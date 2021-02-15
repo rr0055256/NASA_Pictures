@@ -38,6 +38,7 @@
             android:layout_marginTop="@dimen/margin_4"
             android:fontFamily="sans-serif"
             android:gravity="center"
+            android:textColor="@color/md_white_1000"
             android:text="@{nasaItem.title}"
             android:textAppearance="?attr/textAppearanceListItem"
             app:layout_constraintEnd_toEndOf="parent"

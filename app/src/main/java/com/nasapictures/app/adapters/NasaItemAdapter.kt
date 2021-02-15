@@ -3,14 +3,11 @@ package com.nasapictures.app.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.ViewCompat
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.nasapictures.app.NasaFragmentDirections
-import com.nasapictures.app.NasaViewPagerFragmentDirections
 import com.nasapictures.app.data.NasaItem
 import com.nasapictures.app.databinding.ItemLayoutBinding
 
