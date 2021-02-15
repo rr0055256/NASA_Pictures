@@ -36,12 +36,11 @@ class NasaItemAdapter : ListAdapter<NasaItem,RecyclerView.ViewHolder>(NasaDiffCa
         init {
             binding.setClickListener(fun(view: View) {
                 binding.nasaItem?.let {
-                    val extras = FragmentNavigatorExtras(binding.ivNasa to "nasa details")
                     val directions =
                         NasaFragmentDirections.actionNasaFragmentToNasaDetailsFragment(
                             adapterPosition.toString()
                         )
-                    view.findNavController().navigate(directions,extras)
+                    view.findNavController().navigate(directions)
                 }
             })
         }

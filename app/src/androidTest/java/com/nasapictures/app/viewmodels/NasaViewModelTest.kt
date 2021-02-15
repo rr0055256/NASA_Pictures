@@ -43,7 +43,7 @@ class NasaViewModelTest{
     @Test
     fun testDefaultValues() {
         runBlocking {
-            viewModel.fetchNasaItems().collect { Assert.assertTrue(it.isNotEmpty())}
+            Assert.assertTrue(viewModel.nasaItemList?.isNotEmpty() ?: false)
         }
     }
 }
