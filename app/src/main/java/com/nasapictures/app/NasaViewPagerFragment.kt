@@ -53,6 +53,10 @@ class NasaViewPagerFragment : Fragment() {
                     findNavController().navigate(directions)
                     true
                 }
+                R.id.action_bookmark ->{
+
+                    true
+                }
                 else -> false
             }
         }

@@ -50,6 +50,16 @@
             app:isGone="@{!hasItems}"
             />
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/bnvNasa"
+            app:backgroundTint="@color/primaryColor"
+            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

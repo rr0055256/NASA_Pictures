@@ -24,7 +24,7 @@ class NasaViewModel @Inject constructor(var assetManager: AssetManager) : ViewMo
         }
     }
 
-    fun fetchNasaItem(pos : String) : NasaItem?{
+    fun fetchNasaItem(pos : String) : NasaItem{
         return Gson().fromJson(assetManager.readAssetsFile("nasa.json"),Array<NasaItem>::class.java).toList().asReversed()[pos.toInt()]
     }
 }

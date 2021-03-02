@@ -6,4 +6,9 @@
         android:icon="@drawable/ic_information"
         android:title="@string/menu_information"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_bookmark"
+        android:icon="@drawable/ic_bookmark"
+        android:title="@string/menu_bookmark"
+        app:showAsAction="ifRoom" />
 </menu>
