@@ -53,7 +53,7 @@ ext {
     archLifecycleVersion = '2.3.1'
     archTestingVersion = '2.1.0'
     cardVersion = '1.0.0'
-    composeVersion = '1.0.0'
+    composeVersion = '1.0.1'
     constraintLayoutVersion = '2.1.0'
     coroutinesVersion = '1.5.1'
     espressoVersion = '3.4.0'
